@@ -1,0 +1,28 @@
+package com.mohancode;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter name,password & balance for account");
+        //user
+        String name = sc.next();
+        String password= sc.next();
+        double balance= sc.nextDouble();
+        SBIUser user = new SBIUser(name,balance,password);
+        //add amt
+        String message= user.addMoney(100000);
+        System.out.println(message);
+        // withdraw money
+        System.out.println("Enter amount to withdraw");
+        int money= sc.nextInt();
+        System.out.println("Enter Password");
+        String pass= sc.next();
+        System.out.println(user.withDrawMoney(money,pass));
+        //rate of interest
+        System.out.println(user.calculateInterest(10));
+    }
+
+}
